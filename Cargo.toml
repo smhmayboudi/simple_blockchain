@@ -1,0 +1,18 @@
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+chrono = { default-features = false, features = ["clock"], version = "0.4.19" }
+num-bigint = { default-features = false, version = "0.4.0" }
+num-traits = { default-features = false, version = "0.2.14" }
+rmp-serde = { default-features = false, version = "0.15.4" }
+rust-crypto = { default-features = false, version = "0.2.36" }
+serde = { default-features = false, version = "1.0.117" }
+serde_derive = { default-features = false, version = "1.0.117" }
+sled = { default-features = false, version = "0.34.4" }
+structopt = { default-features = false, version = "0.3.20" }
+
+[package]
+authors = ["Hossein Mayboudi <smhmayboudi@gmail.com>"]
+edition = "2018"
+name = "blockchain"
+version = "0.1.0"
