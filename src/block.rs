@@ -1,20 +1,19 @@
-use chrono::prelude::*;
 use crate::consensus::proof_of_work::ProofOfWork;
 use serde_derive::{Deserialize, Serialize};
+use std::time::Instant;
 
 #[derive(Deserialize, Serialize)]
 pub struct Block {
     pub data: String,
     pub hash: String,
-    pub nonce: i64,
+    pub nonce: u64,
     pub prev_block_hash: String,
-    pub timestamp: i64,
+    pub timestamp: u64,
 }
 
 impl Block {
     pub fn new(data: &str, prev_block_hash: &str) -> Self {
-        let now = Utc::now();
-        let timestamp = now.timestamp_nanos();
+        let timestamp = Instant::now().elapsed().as_secs();
 
         let mut block = Block {
             data: data.to_string(),
